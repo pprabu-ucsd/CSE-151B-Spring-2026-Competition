@@ -4,16 +4,16 @@ Single entry point for inference and submission generation.
 
 Usage:
     python run_inference.py \
-        --model_id   "your-username/your-model-name" \
-        --data_path  "/path/to/private.jsonl" \
-        --output_dir "/path/to/output"
+        --model_id   "favioe/cse151B_qlora_merged" \
+        --data_path  "/data/private.jsonl" \
+        --output_dir "/results"
 
 Or from Python:
     from run_inference import run_inference
     run_inference(
-        model_id   = "your-username/your-model-name",
-        data_path  = "/path/to/private.jsonl",
-        output_dir = "/path/to/output",
+        model_id   = "favioe/cse151B_qlora_merged",
+        data_path  = "/data/private.jsonl",
+        output_dir = "/results",
     )
 """
 
@@ -80,8 +80,8 @@ def extract_letter(text: str) -> str:
 # ─────────────────────────────────────────────────────────────────────────────
 
 def run_inference(
-    model_id:               str   = "your-username/your-model-name",
-    data_path:              str   = "/path/to/private.jsonl",
+    model_id:               str   = "favioe/cse151B_qlora_merged",
+    data_path:              str   = "/data/private.jsonl",
     output_dir:             str   = "./results",
     max_tokens:             int   = 8192,
     temperature:            float = 0.0,
@@ -98,7 +98,7 @@ def run_inference(
     Parameters
     ----------
     model_id : str
-        HuggingFace Hub model path, e.g. "your-username/cse151b-qwen3-qlora".
+        HuggingFace Hub model path, e.g. "favioe/cse151B_qlora_merged".
     data_path : str
         Path to the private test JSONL file (no 'answer' field).
     output_dir : str
