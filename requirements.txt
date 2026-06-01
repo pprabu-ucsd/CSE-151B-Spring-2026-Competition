@@ -1,0 +1,10 @@
+vllm==0.8.5
+transformers
+peft
+trl
+bitsandbytes
+accelerate
+datasets
+sympy==1.13.1
+antlr4-python3-runtime==4.11.1
+tqdm
