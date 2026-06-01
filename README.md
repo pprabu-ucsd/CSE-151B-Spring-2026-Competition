@@ -39,12 +39,11 @@ Then pass `--model_id ./model_weights` to the script.
 
 ```bash
 # 1. Clone this repo
-git clone https://github.com/your-username/cse151b-competition.git
-cd cse151b-competition
+https://github.com/pprabu-ucsd/CSE-151B-Spring-2026-Competition.git
+cd CSE-151B-Spring-2026-Competition
 
 # 2. Install dependencies
-pip install vllm==0.8.5 transformers peft trl bitsandbytes accelerate \
-            datasets sympy antlr4-python3-runtime==4.11.1 tqdm
+pip install -r requirements.txt
 ```
 
 ---
@@ -58,7 +57,7 @@ from run_inference import run_inference
 
 csv_path = run_inference(
     model_id   = "your-username/your-model-name",
-    data_path  = "/path/to/private.jsonl",
+    data_path  = "/data/private.jsonl",
     output_dir = "./results",
 )
 print(f"Submission written to: {csv_path}")
@@ -69,7 +68,7 @@ print(f"Submission written to: {csv_path}")
 ```bash
 python run_inference.py \
     --model_id   "your-username/your-model-name" \
-    --data_path  "/path/to/private.jsonl" \
+    --data_path  "/data/private.jsonl" \
     --output_dir "./results"
 ```
 
@@ -126,39 +125,22 @@ Both produce:
 ```
 .
 ├── README.md
+├── requirements.txt
+├── judger.py
+├── utils.py
 ├── run_inference.py          # Single entry point — call this to reproduce results
-├── starter_code_notebook.ipynb   # Full training + evaluation notebook
-└── results/
+├── code_cse151b_comp.ipynb   # Full training + evaluation notebook
+└── data/                      # Will be created during run
+    ├── public.jsonl
+    └── private.jsonl
+└── results/                      # Will be created during run
     ├── submission.csv            # Final submission file
     └── private_responses.jsonl  # Raw model output backup
 ```
 
 ---
 
-## Uploading Model Weights to HuggingFace Hub
-
-After fine-tuning, push your checkpoint:
-
-```python
-from huggingface_hub import login
-login()
-
-# If using PEFT/LoRA adapter
-model.push_to_hub("your-username/your-model-name")
-tokenizer.push_to_hub("your-username/your-model-name")
-```
-
-Or via CLI:
-
-```bash
-huggingface-cli login
-huggingface-cli upload your-username/your-model-name ./path/to/local/model
-```
-
----
-
 ## Group Members
 
-- Member 1 (PID)
-- Member 2 (PID)
-- Member 3 (PID)
+- Pranav Prabu (A17424120)
+- Favio Espejo (A16153834)
