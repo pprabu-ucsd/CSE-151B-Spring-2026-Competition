@@ -20,13 +20,13 @@ Fine-tuning **Qwen3-4B-Thinking-2507** with QLoRA for mathematical problem solvi
 Our fine-tuned QLoRA checkpoint is hosted on HuggingFace Hub:
 
 ```
-your-username/your-model-name
+favioe/cse151B_qlora_merged
 ```
 
 `run_inference.py` loads the model directly from the Hub — no manual download needed. If you want to run offline, clone the repo locally first:
 
 ```bash
-huggingface-cli download your-username/your-model-name --local-dir ./model_weights
+huggingface-cli download favioe/cse151B_qlora_merged --local-dir ./model_weights
 ```
 
 Then pass `--model_id ./model_weights` to the script.
@@ -54,7 +54,7 @@ pip install -r requirements.txt
 from run_inference import run_inference
 
 csv_path = run_inference(
-    model_id   = "your-username/your-model-name",
+    model_id   = "favioe/cse151B_qlora_merged",
     data_path  = "/data/private.jsonl",
     output_dir = "./results",
 )
@@ -65,7 +65,7 @@ print(f"Submission written to: {csv_path}")
 
 ```bash
 python run_inference.py \
-    --model_id   "your-username/your-model-name" \
+    --model_id   "favioe/cse151B_qlora_merged" \
     --data_path  "/data/private.jsonl" \
     --output_dir "./results"
 ```
@@ -127,7 +127,8 @@ Both produce:
 ├── judger.py
 ├── utils.py
 ├── run_inference.py          # Single entry point — call this to reproduce results
-├── code_cse151b_comp.ipynb   # Full training + evaluation notebook
+├── code_cse151b_comp.ipynb
+├── code_cse151b_comp_v2.ipynb # Full training + evaluation notebook
 └── data/                      # Will be created during run
     ├── public.jsonl
     └── private.jsonl
