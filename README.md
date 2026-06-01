@@ -11,7 +11,7 @@ Fine-tuning **Qwen3-4B-Thinking-2507** with QLoRA for mathematical problem solvi
 | GPU | NVIDIA T4 (Google Colab) |
 | VRAM | 16 GB |
 | Fine-tuning time | ~2–3 hours (2 epochs, 20K examples) |
-| Inference time | ~15–25 minutes for full private set (vLLM, batch) |
+| Inference time | ~1 hour for full private set (vLLM, batch) |
 
 ---
 
