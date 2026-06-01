@@ -23,8 +23,6 @@ Our fine-tuned QLoRA checkpoint is hosted on HuggingFace Hub:
 your-username/your-model-name
 ```
 
-> **Replace** `your-username/your-model-name` with your actual Hub path after uploading (see below).
-
 `run_inference.py` loads the model directly from the Hub — no manual download needed. If you want to run offline, clone the repo locally first:
 
 ```bash
