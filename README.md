@@ -20,7 +20,7 @@ Fine-tuning **Qwen3-4B-Thinking-2507** with QLoRA for mathematical problem solvi
 Our fine-tuned QLoRA checkpoint is hosted on HuggingFace Hub:
 
 ```
-favioe/cse151B_qlora_merged
+[favioe/cse151B_qlora_merged](https://huggingface.co/favioe/cse151B_qlora_merged)
 ```
 
 `run_inference.py` loads the model directly from the Hub — no manual download needed. If you want to run offline, clone the repo locally first:
